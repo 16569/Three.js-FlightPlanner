@@ -1,0 +1,149 @@
+
+.contener {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 100vh 100vh;
+    grid-template-areas: 'left right';
+}
+
+.navigator {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: left;
+}
+
+#content {
+    grid-area: right;
+}
+
+.area1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(20, 20, 20);
+    color: rgb(255, 255, 255);
+}
+
+.padding {
+    padding: 10px;
+}
+
+.section {
+    border: solid 1px #fff;
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.download {
+    text-decoration: none;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    border: solid 1px #fff;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    padding-left: 15%;
+    padding-right: 16%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.current {
+    background-color: cornflowerblue;
+    cursor: pointer;
+    animation: flash 2s linear infinite;
+}
+
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+
+#scroll {
+    border:solid 1px #fff;
+    margin-top: 10px;
+    height:150px;
+    width:100%;
+    overflow-y:scroll;
+}
+
+#undo {
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+#redo {
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.modalArea {
+  visibility: hidden;
+  opacity : 0;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 150px;
+  width: 100%;
+  height: 100%;
+  transition: .4s;
+  grid-area: right;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 70%;
+  max-width: 450px;
+  padding: 10px 30px;
+  background-color: darkgray;
+    opacity: 0.8;
+}
+
+.is-show { /* モーダル表示用クラス */
+  visibility: visible;
+  opacity : 1;
+}
+.size {
+    width: 70px;
+    margin: 10px;
+    background-color: skyblue;
+}
+
+
+@keyframes flash {
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+  
+  80% {
+    opacity: 1;
+  }
+}
+.dlimg {
+    margin-right: 2px;
+    vertical-align: middle;
+}
