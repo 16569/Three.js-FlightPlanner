@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Tello Flight Planner</title>
+    <title>Flight Planner</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./split.css'>
     <script defer src="index.js"></script>
@@ -16,17 +16,19 @@
                     <div class="padding">
                         <div>Navigator</div>
                         <hr>
-                        <input type="button" id="room" class="section" value="RoomSize">
-                        <input type="button" id="voxel" class="section" value="RoomLayout">
-                        <input type="button" id="entry" class="section" value="StartPoint">
-                        <input type="button" id="end" class="section" value="EndPoint">
-                        <a download="commands.txt" id="outcommand" class="download"><img class="dlimg" src="./download.png">Commands</a>
+                        <div tooltip="＜ステップ１＞&#013;&#010;空間の大きさを決定します。" flow="right"><input type="button" id="room" class="section" value="RoomSize" tooltip="ha?"></div>
+                        <div tooltip="＜ステップ２＞&#013;&#010;障害物の配置を決定します。&#013;&#010;クリック:設置&#013;&#010;Shift+クリック:削除" flow="right"><input type="button" id="voxel" class="section" value="RoomLayout"></div>
+                        <div tooltip="＜ステップ３＞&#013;&#010;飛行開始位置を決定します。&#013;&#010;移動:WASD↑↓ / 左回転:Q / 左回転:R&#013;&#010;カメラ回転:左クリでドラッグ / カメラズーム:マウスホイール / カメラ移動:右クリでドラッグ" flow="right"><input type="button" id="entry" class="section" value="StartPoint"></div>
+                        <div tooltip="＜ステップ４＞&#013;&#010;飛行終了位置を決定します。&#013;&#010;移動:WASD↑↓ / 左回転:Q / 左回転:R&#013;&#010;（３人称モードOFF時）カメラ回転:左クリでドラッグ / カメラズーム:マウスホイール / カメラ移動:右クリでドラッグ&#013;&#010;ControlPanel部の←ボタン:コマンドをひとつ戻る / →ボタン:コマンドをひとつやり直す&#013;&#010;３人称モードON/OFF切替:P" flow="right"><input type="button" id="end" class="section" value="EndPoint"></div>
+                        <div tooltip="＜ラストステップ＞&#013;&#010;飛行コマンドをダウンロードします。" flow="right"><a download="commands.txt" id="outcommand" class="download"><img class="dlimg" src="./download.png">Commands</a></div>
                         <hr>
                         <div>ControlPanel</div>
                         <hr>
                         <button id="undo">←</button>
                         <button id="redo">→</button>
                         <div id="scroll"></div>
+                        <hr>
+                        <div><text style="font-size: 8pt;">このツールの使用ついて、制限はありませんが自己責任でお願いします。Tello(Ryze Technology社のドローン)の通信の際に使えるコマンドを出力します。ご要望があればメール(osamu_cyber@me.com)にてお願いします。</text></div>
                     </div>
                 </div>
             </div>
